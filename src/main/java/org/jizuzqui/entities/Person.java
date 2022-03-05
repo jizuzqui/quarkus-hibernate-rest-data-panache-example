@@ -1,8 +1,10 @@
-package org.jizuzqui;
+package org.jizuzqui.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 /**
  * Example JPA entity.
@@ -23,25 +25,14 @@ import javax.persistence.Id;
  * }
  */
 @Entity
-public class MyEntity {
-    private Long id;
-    private String field;
+public class Person extends PanacheEntity {
+    private String name;
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getField() {
-        return field;
-    }
-
-    public void setField(String field) {
-        this.field = field;
+    public void setName(String name) {
+        this.name = name;
     }
 }
